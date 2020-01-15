@@ -1,0 +1,21 @@
+<html>
+  <head></head>
+  <body style="padding: 40px;">
+    <input id="x" oninput="add()"/>
+    <span>+</span>
+    <input id="y" oninput="add()"/>
+    <button onclick="add()">=</button>
+    <span>=</span>
+    <input id="result"/>
+
+    <script>
+      x = document.getElementById('x');
+      y = document.getElementById('y');
+      result = document.getElementById('result');
+
+      function add() {
+        result.value = parseInt(x.value) + parseInt(y.value);
+      }
+    </script>
+  </body>
+</html>

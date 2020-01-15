@@ -1,0 +1,28 @@
+<html>
+  <head></head>
+  <body style="padding: 40px;">
+    <input id="new-todo"/>
+    <button onclick="addNewTodo()">Add</button>
+    <ul id="todos-list"></ul>
+
+
+    <script>
+      newTodoInput = document.getElementById('new-todo');
+      todosList = document.getElementById('todos-list');
+
+      function addNewTodo() {
+        if (newTodoInput.value == '') { return }
+
+        newTodoElement = document.createElement('li');
+        newTodoElement.innerText = newTodoInput.value;
+        newTodoElement.style = "cursor: pointer;";
+        newTodoElement.onclick = function () {
+          this.setAttribute('style', 'text-decoration: line-through;');
+        };
+
+        todosList.appendChild(newTodoElement);
+        newTodoInput.value = '';
+      }
+    </script>
+  </body>
+</html>
